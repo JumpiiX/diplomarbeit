@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="800" height="380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="800" height="380" fill="#f1f2ea"/>
+
+  <text x="40" y="40" font-size="17" font-weight="600" fill="#14203a">Messung am Testdatensatz</text>
+  <text x="40" y="62" font-size="13" fill="#6b706e">6 Produkte, 66 erwartete Attributwerte, Sollwerte von Hand abgelesen</text>
+
+  <!-- headline number -->
+  <rect x="40" y="88" width="230" height="110" rx="6" fill="#d8ff00"/>
+  <text x="155" y="140" font-size="44" font-weight="600" fill="#14203a" text-anchor="middle">100 %</text>
+  <text x="155" y="164" font-size="13" fill="#14203a" text-anchor="middle">Correctness</text>
+  <text x="155" y="184" font-size="12" fill="#14203a" opacity="0.7" text-anchor="middle">66 von 66 korrekt</text>
+
+  <!-- supporting numbers -->
+  <rect x="284" y="88" width="150" height="52" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="359" y="112" font-size="20" font-weight="600" fill="#14203a" text-anchor="middle">6 / 6</text>
+  <text x="359" y="130" font-size="11" fill="#6b706e" text-anchor="middle">Produkte erkannt</text>
+
+  <rect x="448" y="88" width="150" height="52" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="523" y="112" font-size="20" font-weight="600" fill="#14203a" text-anchor="middle">0</text>
+  <text x="523" y="130" font-size="11" fill="#6b706e" text-anchor="middle">erfundene Werte</text>
+
+  <rect x="612" y="88" width="150" height="52" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="687" y="112" font-size="20" font-weight="600" fill="#14203a" text-anchor="middle">96,97 %</text>
+  <text x="687" y="130" font-size="11" fill="#6b706e" text-anchor="middle">mit Fundstelle</text>
+
+  <rect x="284" y="146" width="150" height="52" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="359" y="170" font-size="20" font-weight="600" fill="#14203a" text-anchor="middle">1</text>
+  <text x="359" y="188" font-size="11" fill="#6b706e" text-anchor="middle">Modellaufruf</text>
+
+  <rect x="448" y="146" width="150" height="52" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="523" y="170" font-size="20" font-weight="600" fill="#14203a" text-anchor="middle">40,7 s</text>
+  <text x="523" y="188" font-size="11" fill="#6b706e" text-anchor="middle">Dauer</text>
+
+  <rect x="612" y="146" width="150" height="52" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="687" y="170" font-size="20" font-weight="600" fill="#14203a" text-anchor="middle">9 486</text>
+  <text x="687" y="188" font-size="11" fill="#6b706e" text-anchor="middle">Tokens gesamt</text>
+
+  <!-- per product bars -->
+  <text x="40" y="232" font-size="13" font-weight="600" fill="#14203a">Je Produkt: 11 von 11 Feldern korrekt</text>
+
+  <g font-size="11">
+    <text x="40" y="258" fill="#6b706e">MX Master 3S</text>
+    <rect x="200" y="248" width="180" height="12" rx="2" fill="#3155df"/>
+    <text x="392" y="258" fill="#14203a">11/11</text>
+
+    <text x="40" y="278" fill="#6b706e">MX Keys S</text>
+    <rect x="200" y="268" width="180" height="12" rx="2" fill="#3155df"/>
+    <text x="392" y="278" fill="#14203a">11/11</text>
+
+    <text x="40" y="298" fill="#6b706e">Brio 4K</text>
+    <rect x="200" y="288" width="180" height="12" rx="2" fill="#3155df"/>
+    <text x="392" y="298" fill="#14203a">11/11</text>
+
+    <text x="40" y="318" fill="#6b706e">Anker 737</text>
+    <rect x="200" y="308" width="180" height="12" rx="2" fill="#3155df"/>
+    <text x="392" y="318" fill="#14203a">11/11</text>
+
+    <text x="40" y="338" fill="#6b706e">Samsung T9</text>
+    <rect x="200" y="328" width="180" height="12" rx="2" fill="#3155df"/>
+    <text x="392" y="338" fill="#14203a">11/11</text>
+
+    <text x="40" y="358" fill="#6b706e">TP-Link Deco X50</text>
+    <rect x="200" y="348" width="180" height="12" rx="2" fill="#3155df"/>
+    <text x="392" y="358" fill="#14203a">11/11</text>
+  </g>
+
+  <text x="448" y="258" font-size="12" font-weight="600" fill="#14203a">Die zwei Werte ohne Fundstelle</text>
+  <text x="448" y="278" font-size="11" fill="#6b706e">sind genau die beiden Felder, die im</text>
+  <text x="448" y="294" font-size="11" fill="#6b706e">Dokument gar nicht stehen. Beide</text>
+  <text x="448" y="310" font-size="11" fill="#6b706e">wurden als fehlend erkannt, nicht</text>
+  <text x="448" y="326" font-size="11" fill="#6b706e">erfunden. Ein Feld ohne Zitat hat</text>
+  <text x="448" y="342" font-size="11" fill="#6b706e">nichts zu verankern.</text>
+</svg>
