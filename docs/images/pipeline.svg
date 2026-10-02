@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" width="700" height="420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="700" height="420" fill="#f1f2ea"/>
+
+  <text x="40" y="44" font-size="17" font-weight="600" fill="#14203a">Die Extraktions-Pipeline</text>
+  <text x="40" y="66" font-size="13" fill="#6b706e">Sechs feste Schritte. Nur der erste fragt ein Sprachmodell.</text>
+
+  <!-- row 1 -->
+  <rect x="40" y="100" width="92" height="56" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="86" y="126" font-size="13" font-weight="600" fill="#14203a" text-anchor="middle">PDF</text>
+  <text x="86" y="143" font-size="11" fill="#6b706e" text-anchor="middle">Lieferant</text>
+
+  <path d="M 136 128 L 158 128" stroke="#9aa294" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="162" y="94" width="112" height="68" rx="6" fill="#3155df"/>
+  <text x="218" y="120" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">extract</text>
+  <text x="218" y="137" font-size="11" fill="#ffffff" opacity="0.85" text-anchor="middle">Sprachmodell</text>
+  <text x="218" y="152" font-size="10" fill="#ffffff" opacity="0.7" text-anchor="middle">1 Aufruf</text>
+
+  <path d="M 278 128 L 300 128" stroke="#9aa294" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="304" y="100" width="100" height="56" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="354" y="124" font-size="13" font-weight="600" fill="#14203a" text-anchor="middle">anchor</text>
+  <text x="354" y="142" font-size="11" fill="#6b706e" text-anchor="middle">pdfium</text>
+
+  <path d="M 408 128 L 430 128" stroke="#9aa294" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="434" y="100" width="100" height="56" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="484" y="124" font-size="13" font-weight="600" fill="#14203a" text-anchor="middle">normalise</text>
+  <text x="484" y="142" font-size="11" fill="#6b706e" text-anchor="middle">Einheiten</text>
+
+  <!-- wrap down to row 2 -->
+  <path d="M 538 128 L 570 128 L 570 200 L 106 200 L 106 226" fill="none" stroke="#9aa294" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- row 2 -->
+  <rect x="56" y="230" width="100" height="56" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="106" y="254" font-size="13" font-weight="600" fill="#14203a" text-anchor="middle">validate</text>
+  <text x="106" y="272" font-size="11" fill="#6b706e" text-anchor="middle">Regeln</text>
+
+  <path d="M 160 258 L 182 258" stroke="#9aa294" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="186" y="230" width="100" height="56" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="236" y="254" font-size="13" font-weight="600" fill="#14203a" text-anchor="middle">score</text>
+  <text x="236" y="272" font-size="11" fill="#6b706e" text-anchor="middle">Konfidenz</text>
+
+  <path d="M 290 258 L 312 258" stroke="#9aa294" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- the one acid accent -->
+  <rect x="316" y="230" width="116" height="56" rx="6" fill="#d8ff00"/>
+  <text x="374" y="254" font-size="13" font-weight="600" fill="#14203a" text-anchor="middle">Vorschlag</text>
+  <text x="374" y="272" font-size="11" fill="#14203a" opacity="0.7" text-anchor="middle">zur Prüfung</text>
+
+  <!-- repair: fed by validate, rejoins before score -->
+  <rect x="462" y="228" width="196" height="60" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="560" y="252" font-size="13" font-weight="600" fill="#14203a" text-anchor="middle">repair</text>
+  <text x="560" y="269" font-size="11" fill="#6b706e" text-anchor="middle">nur was die Regeln</text>
+  <text x="560" y="283" font-size="11" fill="#6b706e" text-anchor="middle">nicht klären konnten</text>
+
+  <path d="M 130 290 L 130 322 L 560 322 L 560 292" fill="none" stroke="#9aa294" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a)"/>
+  <path d="M 500 224 L 500 208 L 212 208 L 212 226" fill="none" stroke="#9aa294" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a)"/>
+
+  <text x="40" y="368" font-size="12" fill="#6b706e">Ein sauberes Dokument kostet genau einen Modellaufruf. Ein Regelergebnis schlägt die</text>
+  <text x="40" y="386" font-size="12" fill="#6b706e">Selbsteinschätzung des Modells — in beide Richtungen.</text>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#9aa294"/>
+    </marker>
+  </defs>
+</svg>
