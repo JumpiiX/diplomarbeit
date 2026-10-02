@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 440" width="620" height="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="620" height="440" fill="#f1f2ea"/>
+
+  <text x="50" y="40" font-size="17" font-weight="600" fill="#14203a">Risikomatrix</text>
+  <text x="50" y="62" font-size="13" fill="#6b706e">Eintrittswahrscheinlichkeit gegen Auswirkung</text>
+
+  <!-- grid 3x3 -->
+  <g stroke="#c5cbbc" stroke-width="1.5">
+    <rect x="110" y="90" width="150" height="90" fill="#ffffff"/>
+    <rect x="260" y="90" width="150" height="90" fill="#ffffff"/>
+    <rect x="410" y="90" width="150" height="90" fill="#ffffff"/>
+    <rect x="110" y="180" width="150" height="90" fill="#ffffff"/>
+    <rect x="260" y="180" width="150" height="90" fill="#ffffff"/>
+    <rect x="410" y="180" width="150" height="90" fill="#ffffff"/>
+    <rect x="110" y="270" width="150" height="90" fill="#ffffff"/>
+    <rect x="260" y="270" width="150" height="90" fill="#ffffff"/>
+    <rect x="410" y="270" width="150" height="90" fill="#ffffff"/>
+  </g>
+
+  <!-- y axis labels, centred in their row -->
+  <text x="100" y="139" font-size="12" fill="#6b706e" text-anchor="end">hoch</text>
+  <text x="100" y="229" font-size="12" fill="#6b706e" text-anchor="end">mittel</text>
+  <text x="100" y="319" font-size="12" fill="#6b706e" text-anchor="end">niedrig</text>
+  <text x="34" y="230" font-size="12" font-weight="600" fill="#14203a" text-anchor="middle" transform="rotate(-90 34 230)">Wahrscheinlichkeit</text>
+
+  <!-- x axis labels -->
+  <text x="185" y="382" font-size="12" fill="#6b706e" text-anchor="middle">niedrig</text>
+  <text x="335" y="382" font-size="12" fill="#6b706e" text-anchor="middle">mittel</text>
+  <text x="485" y="382" font-size="12" fill="#6b706e" text-anchor="middle">hoch</text>
+  <text x="335" y="406" font-size="12" font-weight="600" fill="#14203a" text-anchor="middle">Auswirkung</text>
+
+  <!-- R4: hoch / hoch -->
+  <rect x="424" y="120" width="122" height="30" rx="4" fill="#ffffff" stroke="#3155df" stroke-width="1.5"/>
+  <text x="485" y="140" font-size="12" font-weight="600" fill="#3155df" text-anchor="middle">R4 Produktbild</text>
+
+  <!-- R1: mittel / hoch -->
+  <rect x="424" y="210" width="122" height="30" rx="4" fill="#ffffff" stroke="#3155df" stroke-width="1.5"/>
+  <text x="485" y="230" font-size="12" font-weight="600" fill="#3155df" text-anchor="middle">R1 Extraktion</text>
+
+  <!-- R2 and R3 share the mittel/mittel cell -->
+  <rect x="274" y="192" width="122" height="30" rx="4" fill="#ffffff" stroke="#3155df" stroke-width="1.5"/>
+  <text x="335" y="212" font-size="12" font-weight="600" fill="#3155df" text-anchor="middle">R2 Umfang</text>
+
+  <!-- R3 is the one that actually hit in sprint 1 -->
+  <rect x="274" y="228" width="122" height="30" rx="4" fill="#d8ff00"/>
+  <text x="335" y="248" font-size="12" font-weight="600" fill="#14203a" text-anchor="middle">R3 Technik</text>
+
+  <!-- R5: niedrig / mittel -->
+  <rect x="274" y="300" width="122" height="30" rx="4" fill="#ffffff" stroke="#3155df" stroke-width="1.5"/>
+  <text x="335" y="320" font-size="12" font-weight="600" fill="#3155df" text-anchor="middle">R5 Zeit</text>
+
+  <text x="50" y="430" font-size="11" fill="#6b706e">Gelb markiert das Risiko, das in Sprint 1 tatsächlich eingetreten ist: R3, in Gestalt von pdfium.</text>
+</svg>
