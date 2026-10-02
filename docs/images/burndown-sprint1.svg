@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" width="720" height="400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="720" height="400" fill="#f1f2ea"/>
+
+  <text x="50" y="40" font-size="17" font-weight="600" fill="#14203a">Burndown Sprint 1</text>
+  <text x="50" y="62" font-size="13" fill="#6b706e">51 Story Points über vier Wochen</text>
+
+  <!-- axes -->
+  <line x1="70" y1="100" x2="70" y2="320" stroke="#c5cbbc" stroke-width="1.5"/>
+  <line x1="70" y1="320" x2="650" y2="320" stroke="#c5cbbc" stroke-width="1.5"/>
+
+  <!-- y labels + gridlines -->
+  <text x="60" y="105" font-size="11" fill="#6b706e" text-anchor="end">51</text>
+  <line x1="70" y1="100" x2="650" y2="100" stroke="#daddd4" stroke-width="1"/>
+  <text x="60" y="160" font-size="11" fill="#6b706e" text-anchor="end">38</text>
+  <line x1="70" y1="155" x2="650" y2="155" stroke="#daddd4" stroke-width="1"/>
+  <text x="60" y="215" font-size="11" fill="#6b706e" text-anchor="end">26</text>
+  <line x1="70" y1="210" x2="650" y2="210" stroke="#daddd4" stroke-width="1"/>
+  <text x="60" y="270" font-size="11" fill="#6b706e" text-anchor="end">13</text>
+  <line x1="70" y1="265" x2="650" y2="265" stroke="#daddd4" stroke-width="1"/>
+  <text x="60" y="325" font-size="11" fill="#6b706e" text-anchor="end">0</text>
+
+  <!-- x labels -->
+  <text x="70" y="344" font-size="11" fill="#6b706e" text-anchor="middle">Start</text>
+  <text x="215" y="344" font-size="11" fill="#6b706e" text-anchor="middle">Woche 1</text>
+  <text x="360" y="344" font-size="11" fill="#6b706e" text-anchor="middle">Woche 2</text>
+  <text x="505" y="344" font-size="11" fill="#6b706e" text-anchor="middle">Woche 3</text>
+  <text x="650" y="344" font-size="11" fill="#6b706e" text-anchor="middle">Woche 4</text>
+
+  <!-- ideal line -->
+  <line x1="70" y1="100" x2="650" y2="320" stroke="#9aa294" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <!-- actual line: 51 -> 40 -> 27 -> 11 -> 0 -->
+  <polyline points="70,100 215,147 360,203 505,273 650,320" fill="none" stroke="#3155df" stroke-width="2.5"/>
+  <circle cx="70" cy="100" r="4" fill="#3155df"/>
+  <circle cx="215" cy="147" r="4" fill="#3155df"/>
+  <circle cx="360" cy="203" r="4" fill="#3155df"/>
+  <circle cx="505" cy="273" r="4" fill="#3155df"/>
+  <circle cx="650" cy="320" r="5" fill="#d8ff00" stroke="#14203a" stroke-width="1.5"/>
+
+  <!-- legend -->
+  <line x1="70" y1="372" x2="100" y2="372" stroke="#9aa294" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="108" y="376" font-size="12" fill="#6b706e">ideal</text>
+  <line x1="160" y1="372" x2="190" y2="372" stroke="#3155df" stroke-width="2.5"/>
+  <text x="198" y="376" font-size="12" fill="#6b706e">tatsächlich</text>
+
+  <text x="300" y="376" font-size="12" fill="#6b706e">Restpunkte je Wochenende: 51 · 40 · 27 · 11 · 0</text>
+</svg>
