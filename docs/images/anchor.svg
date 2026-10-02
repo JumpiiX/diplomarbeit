@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" width="820" height="300" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="820" height="300" fill="#f1f2ea"/>
+
+  <text x="40" y="44" font-size="17" font-weight="600" fill="#14203a">Woher die Koordinaten kommen</text>
+  <text x="40" y="66" font-size="13" fill="#6b706e">Das Modell nennt den Wortlaut. Gemessen wird im Dokument.</text>
+
+  <!-- step 1: model -->
+  <rect x="40" y="104" width="190" height="86" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="58" y="128" font-size="12" font-weight="600" fill="#3155df">1 · Modell</text>
+  <text x="58" y="150" font-size="12" fill="#14203a">„141 g" steht auf Seite 1</text>
+  <text x="58" y="170" font-size="11" fill="#6b706e">liefert Wert und Zitat,</text>
+  <text x="58" y="184" font-size="11" fill="#6b706e">keine Geometrie</text>
+
+  <path d="M 234 147 L 264 147" stroke="#9aa294" stroke-width="1.5" marker-end="url(#c)"/>
+
+  <!-- step 2: pdfium -->
+  <rect x="268" y="104" width="190" height="86" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="286" y="128" font-size="12" font-weight="600" fill="#3155df">2 · pdfium</text>
+  <text x="286" y="150" font-size="12" fill="#14203a">sucht „141 g" im PDF</text>
+  <text x="286" y="170" font-size="11" fill="#6b706e">misst das Rechteck,</text>
+  <text x="286" y="184" font-size="11" fill="#6b706e">seitenrelativ in Prozent</text>
+
+  <path d="M 462 147 L 492 147" stroke="#9aa294" stroke-width="1.5" marker-end="url(#c)"/>
+
+  <!-- step 3: result -->
+  <rect x="496" y="104" width="190" height="86" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="514" y="128" font-size="12" font-weight="600" fill="#3155df">3 · Befund</text>
+  <text x="514" y="150" font-size="12" fill="#14203a">Seite 1, Rechteck belegt</text>
+  <text x="514" y="170" font-size="11" fill="#6b706e">nicht gefunden heisst:</text>
+  <text x="514" y="184" font-size="11" fill="#6b706e">Wert wird markiert</text>
+
+  <!-- the sentence that carries the argument -->
+  <rect x="40" y="220" width="646" height="44" rx="6" fill="#d8ff00"/>
+  <text x="64" y="248" font-size="14" font-weight="600" fill="#14203a">Die Geometrie stammt aus dem Dokument, nie aus dem Modell.</text>
+
+  <defs>
+    <marker id="c" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#9aa294"/>
+    </marker>
+  </defs>
+</svg>
