@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="720" height="340" fill="#f1f2ea"/>
+
+  <text x="40" y="40" font-size="17" font-weight="600" fill="#14203a">Drei Sprints, jeder vier Wochen</text>
+  <text x="40" y="62" font-size="13" fill="#6b706e">14.09. bis 18.12.2026 · Zwischenpräsentation acht Tage nach Sprint-Ende</text>
+
+  <!-- sprint 1: done -->
+  <rect x="40" y="92" width="200" height="72" rx="6" fill="#3155df"/>
+  <text x="58" y="117" font-size="14" font-weight="600" fill="#ffffff">Sprint 1</text>
+  <text x="58" y="136" font-size="12" fill="#ffffff" opacity="0.85">Fundament und Extraktion</text>
+  <text x="58" y="153" font-size="11" fill="#ffffff" opacity="0.7">51 SP · 11 Tickets</text>
+
+  <rect x="250" y="92" width="200" height="72" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="268" y="117" font-size="14" font-weight="600" fill="#14203a">Sprint 2</text>
+  <text x="268" y="136" font-size="12" fill="#6b706e">Qualität, Bilder und Shop</text>
+  <text x="268" y="153" font-size="11" fill="#6b706e">55 SP · 10 Tickets</text>
+
+  <rect x="460" y="92" width="200" height="72" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="478" y="117" font-size="14" font-weight="600" fill="#14203a">Sprint 3</text>
+  <text x="478" y="136" font-size="12" fill="#6b706e">PIMFLOW Oberfläche</text>
+  <text x="478" y="153" font-size="11" fill="#6b706e">59 SP · 12 Tickets</text>
+
+  <!-- date row under the boxes -->
+  <text x="140" y="184" font-size="11" fill="#6b706e" text-anchor="middle">14.09. – 11.10.</text>
+  <text x="350" y="184" font-size="11" fill="#6b706e" text-anchor="middle">12.10. – 08.11.</text>
+  <text x="560" y="184" font-size="11" fill="#6b706e" text-anchor="middle">09.11. – 06.12.</text>
+
+  <!-- milestone line -->
+  <line x1="40" y1="212" x2="660" y2="212" stroke="#c5cbbc" stroke-width="1.5"/>
+
+  <circle cx="140" cy="212" r="6" fill="#d8ff00" stroke="#14203a" stroke-width="1.5"/>
+  <text x="140" y="236" font-size="12" font-weight="600" fill="#14203a" text-anchor="middle">ZP1</text>
+  <text x="140" y="251" font-size="11" fill="#6b706e" text-anchor="middle">19.10.</text>
+
+  <circle cx="350" cy="212" r="6" fill="#ffffff" stroke="#9aa294" stroke-width="1.5"/>
+  <text x="350" y="236" font-size="12" fill="#6b706e" text-anchor="middle">ZP2</text>
+  <text x="350" y="251" font-size="11" fill="#6b706e" text-anchor="middle">16.11.</text>
+
+  <circle cx="560" cy="212" r="6" fill="#ffffff" stroke="#9aa294" stroke-width="1.5"/>
+  <text x="560" y="236" font-size="12" fill="#6b706e" text-anchor="middle">ZP3</text>
+  <text x="560" y="251" font-size="11" fill="#6b706e" text-anchor="middle">14.12.</text>
+
+  <!-- handover phase, on its own line so nothing is cut off -->
+  <rect x="40" y="268" width="620" height="32" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="58" y="289" font-size="12" font-weight="600" fill="#14203a">Abgabephase</text>
+  <text x="152" y="289" font-size="12" fill="#6b706e">07. – 18.12.2026 · Dokumentation, Schlusspräsentation, Abgabe des Quellcodes</text>
+
+  <text x="40" y="326" font-size="12" fill="#6b706e">Gleich lange Sprints, damit die Velocity vergleichbar bleibt.</text>
+</svg>
