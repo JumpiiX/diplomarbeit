@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="760" height="420" fill="#f1f2ea"/>
+
+  <text x="40" y="44" font-size="17" font-weight="600" fill="#14203a">Schichten und Abhängigkeiten</text>
+  <text x="40" y="66" font-size="13" fill="#6b706e">Die Pfeile zeigen nach innen. Die Domäne kennt niemanden.</text>
+
+  <!-- api -->
+  <rect x="40" y="94" width="480" height="58" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="60" y="119" font-size="14" font-weight="600" fill="#14203a">api</text>
+  <text x="60" y="138" font-size="12" fill="#6b706e">Routen, DTOs, Fehler auf Statuscodes abbilden</text>
+
+  <!-- application -->
+  <rect x="40" y="164" width="480" height="58" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="60" y="189" font-size="14" font-weight="600" fill="#14203a">application</text>
+  <text x="60" y="208" font-size="12" fill="#6b706e">Anwendungsfälle, Pipeline-Orchestrierung</text>
+
+  <!-- domain: the one thing that matters -->
+  <rect x="40" y="234" width="480" height="66" rx="6" fill="#3155df" stroke="#3155df" stroke-width="1.5"/>
+  <text x="60" y="260" font-size="14" font-weight="600" fill="#ffffff">domain</text>
+  <text x="60" y="279" font-size="12" fill="#ffffff" opacity="0.85">Entitäten, Wertobjekte, Regeln, Ports</text>
+  <text x="60" y="294" font-size="11" fill="#ffffff" opacity="0.7">kein I/O, kein Framework, ohne Datenbank testbar</text>
+
+  <!-- infrastructure -->
+  <rect x="40" y="312" width="480" height="58" rx="6" fill="#ffffff" stroke="#c5cbbc" stroke-width="1.5"/>
+  <text x="60" y="337" font-size="14" font-weight="600" fill="#14203a">infrastructure</text>
+  <text x="60" y="356" font-size="12" fill="#6b706e">PostgreSQL, Claude, pdfium, Dateiablage</text>
+
+  <!-- inward arrows -->
+  <path d="M 540 123 L 578 123 L 578 262 L 536 262" fill="none" stroke="#9aa294" stroke-width="1.5" marker-end="url(#b)"/>
+  <path d="M 540 193 L 560 193 L 560 254 L 536 254" fill="none" stroke="#9aa294" stroke-width="1.5" marker-end="url(#b)"/>
+  <path d="M 540 341 L 578 341 L 578 278 L 536 278" fill="none" stroke="#9aa294" stroke-width="1.5" marker-end="url(#b)"/>
+
+  <text x="600" y="256" font-size="12" font-weight="600" fill="#14203a">alles zeigt</text>
+  <text x="600" y="273" font-size="12" font-weight="600" fill="#14203a">nach innen</text>
+
+  <text x="40" y="400" font-size="12" fill="#6b706e">Die Domäne definiert Traits in domain/ports.rs, die Infrastruktur erfüllt sie. Deshalb laufen 324 Unit-Tests ohne Datenbank.</text>
+
+  <defs>
+    <marker id="b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 z" fill="#9aa294"/>
+    </marker>
+  </defs>
+</svg>
