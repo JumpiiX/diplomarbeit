@@ -19,8 +19,8 @@
 
 ## Wichtige Links
 
-- **Testdatensatz:** [demo/test.pdf](demo/test.pdf) — das mit dem Kunden vereinbarte Test-PDF
-- **Product Backlog:** [product-backlog.md](product-backlog.md) — alle 33 Tickets, drei Sprints
+- **Testdatensatz:** [demo/test.pdf](demo/test.pdf), das mit dem Kunden vereinbarte Test-PDF
+- **Product Backlog:** [product-backlog.md](product-backlog.md), alle 33 Tickets über drei Sprints
 - **Issue-Tracking:** Linear, Team *Diplomarbeit*, Tickets `DA-1` bis `DA-33`
 - **Quellcode:** Backend und Frontend liegen in privaten Repositories des Kundenprojekts. Aus Vertraulichkeitsgründen besteht während der Projektlaufzeit kein Zugriff; der vollständige Quellcode wird den Experten mit der Abgabe als ZIP-Archiv übergeben (siehe [Zugang zum Quellcode](#zugang-zum-quellcode)).
 
@@ -48,7 +48,7 @@
 - [Kommunikation mit den Experten](#kommunikation-mit-den-experten)
 - [Abdeckung des Bewertungsrasters](#abdeckung-des-bewertungsrasters)
 
-**Sprint 1 — Fundament und Extraktion**
+**Sprint 1: Fundament und Extraktion**
 - [Sprint 1 Planung](#sprint-1-planung)
 - [Sprint 1 Durchführung](#sprint-1-durchführung)
 - [Sprint 1 Testing](#sprint-1-testing)
@@ -65,7 +65,7 @@ Im Schweizer Retail werden Produktstammdaten bis heute überwiegend von Hand erf
 
 PIMFLOW automatisiert diesen Schritt, ohne die Verantwortung dafür abzugeben. Ein Sprachmodell liest das Lieferantendokument und schlägt die enthaltenen Produktdaten strukturiert vor. Zu jedem Wert wird die Stelle im Dokument mitgeliefert, aus der er stammt. Ein Fachanwender prüft, korrigiert und gibt frei. Erst dann entsteht ein Produkt.
 
-Der Satz, der die ganze Architektur trägt: **Das System schlägt vor, der Mensch entscheidet.** Nichts erreicht den Stammdatenspeicher ohne ausdrückliche Freigabe einer namentlich erfassten Person. Das ist zugleich die Antwort auf die Schwäche jedes Sprachmodells — es kann sich irren, und deshalb darf es nicht das letzte Wort haben.
+Der Satz, der die ganze Architektur trägt: **Das System schlägt vor, der Mensch entscheidet.** Nichts erreicht den Stammdatenspeicher ohne ausdrückliche Freigabe einer namentlich erfassten Person. Das ist zugleich die Antwort auf die Schwäche jedes Sprachmodells: Es kann sich irren, und deshalb darf es nicht das letzte Wort haben.
 
 **Ergebnis nach Sprint 1:** Ein Lieferantendokument kann über die API hochgeladen und ausgelesen werden. Am gemeinsam mit dem Kunden definierten Testdatensatz wurden **66 von 66 erwarteten Attributwerten korrekt erkannt**, das sind 100 % bei einem Zielwert von 99 %. Kein Wert wurde erfunden. Zu 96,97 % der Werte konnte die Fundstelle im Dokument nachgewiesen werden; die beiden Ausnahmen sind genau die zwei Felder, die im Dokument nicht vorkommen und korrekt als fehlend gemeldet wurden.
 
@@ -159,7 +159,7 @@ Was diese Arbeit **nicht** leistet, und warum:
 
 ![Schichten und Abhängigkeiten](docs/images/architektur.svg)
 
-Vier Schichten, und alle Abhängigkeiten zeigen nach innen. Die Domäne kennt weder Datenbank noch HTTP noch Claude — sie definiert Traits in `domain/ports.rs`, und die Infrastruktur erfüllt sie.
+Vier Schichten, und alle Abhängigkeiten zeigen nach innen. Die Domäne kennt weder Datenbank noch HTTP noch Claude. Sie definiert Traits in `domain/ports.rs`, und die Infrastruktur erfüllt sie.
 
 Das ist keine Stilfrage. Es ist der Grund, weshalb 324 Unit-Tests ohne laufende Datenbank durchlaufen, in 0,10 Sekunden. Läge die Fachlogik in den Handlern, bräuchte jeder dieser Tests einen HTTP-Server und eine Datenbank, und niemand würde sie mehr bei jedem Speichern laufen lassen.
 
@@ -169,7 +169,7 @@ src/
 ├── config.rs         typisierte Konfiguration, einmal beim Start geprüft
 ├── api/              HTTP: Routen, DTOs, Fehler auf Statuscodes
 ├── application/      Anwendungsfälle, gegen Ports formuliert
-├── domain/           Entitäten, Wertobjekte, Regeln, Ports — kein I/O
+├── domain/           Entitäten, Wertobjekte, Regeln, Ports, kein I/O
 └── infrastructure/   PostgreSQL, Claude, pdfium, Dateiablage
 ```
 
@@ -177,7 +177,7 @@ src/
 
 `pimflow_db` ist der Stammdatenspeicher und gehört PIMFLOW. `pimflow_mock_db` steht für die bestehenden Produktdaten des Kunden und wird ausschliesslich gelesen.
 
-Getrennte Datenbanken statt getrennter Schemas, weil die Mock-Datenbank wegwerfbar sein muss. Wird das echte Kundensystem angebunden, verschwindet sie, und nichts im Stammdatenspeicher bricht. Fremdschlüssel über Datenbankgrenzen sind in PostgreSQL nicht möglich — und genau das ist hier erwünscht, denn ein Verweis auf ein fremdes System ist auch in Wirklichkeit kein Fremdschlüssel.
+Getrennte Datenbanken statt getrennter Schemas, weil die Mock-Datenbank wegwerfbar sein muss. Wird das echte Kundensystem angebunden, verschwindet sie, und nichts im Stammdatenspeicher bricht. Fremdschlüssel über Datenbankgrenzen sind in PostgreSQL nicht möglich, und genau das ist hier erwünscht, denn ein Verweis auf ein fremdes System ist auch in Wirklichkeit kein Fremdschlüssel.
 
 ### Der Speicher wird nur beschrieben, nie überschrieben
 
@@ -219,7 +219,7 @@ Ein Detail, das mich Zeit gekostet hat: pdfium initialisiert prozessweiten Zusta
 
 Scrum ist ein Rahmenwerk für die iterative Entwicklung in Sprints fester Länge. Es definiert drei Verantwortlichkeiten (Product Owner, Scrum Master, Entwickler), fünf Ereignisse und drei Artefakte.[^scrum]
 
-In einer Einzelarbeit fallen die drei Rollen zusammen. Was bleibt und was ich tatsächlich nutze, sind die Ereignisse: Sprint Planning zu Beginn, Review am Ende, Retrospektive danach. Die Zwischenpräsentationen der Diplomarbeit sind als Sprint Reviews ausgestaltet, was gut passt, weil ein Review genau das ist — das Ergebnis den Stakeholdern zeigen und Rückmeldung einholen.
+In einer Einzelarbeit fallen die drei Rollen zusammen. Was bleibt und was ich tatsächlich nutze, sind die Ereignisse: Sprint Planning zu Beginn, Review am Ende, Retrospektive danach. Die Zwischenpräsentationen der Diplomarbeit sind als Sprint Reviews ausgestaltet, was gut passt, weil ein Review genau das ist: das Ergebnis den Stakeholdern zeigen und Rückmeldung einholen.
 
 Was ich bewusst weglasse: Daily Scrums mit mir selbst. Ein Ereignis, dessen Zweck die Abstimmung im Team ist, hat ohne Team keinen Zweck. An seiner Stelle steht das Projektjournal.
 
@@ -235,7 +235,7 @@ Eine geteilte Festlegung, wann eine Aufgabe fertig ist. Ohne sie bedeutet „erl
 
 ### Risikomanagement
 
-Risiken werden nach Eintrittswahrscheinlichkeit und Auswirkung bewertet und mit einer Massnahme versehen. Der Nutzen liegt weniger in der Bewertung als im Zwang, vor dem Projekt zu benennen, was schiefgehen kann — und nach dem Projekt nachzusehen, ob man richtig lag.
+Risiken werden nach Eintrittswahrscheinlichkeit und Auswirkung bewertet und mit einer Massnahme versehen. Der Nutzen liegt weniger in der Bewertung als im Zwang, vor dem Projekt zu benennen, was schiefgehen kann, und nach dem Projekt nachzusehen, ob man richtig lag.
 
 [^scrum]: Schwaber, K. & Sutherland, J. (2020): *The Scrum Guide*. https://scrumguides.org/
 [^cohn]: Cohn, M. (2005): *Agile Estimating and Planning*. Prentice Hall.
@@ -248,14 +248,14 @@ Risiken werden nach Eintrittswahrscheinlichkeit und Auswirkung bewertet und mit 
 
 | Sprint | Zeitraum | Dauer | Story Points | Tickets | Zwischenpräsentation |
 |---|---|---|---|---|---|
-| 1 — Fundament und Extraktion | 14.09. – 11.10.2026 | 4 Wochen | 51 | 11 | ZP1: 19.10.2026 |
-| 2 — Qualität, Bilder und Shop | 12.10. – 08.11.2026 | 4 Wochen | 55 | 10 | ZP2: 16.11.2026 |
-| 3 — PIMFLOW Oberfläche | 09.11. – 06.12.2026 | 4 Wochen | 59 | 12 | ZP3: 14.12.2026 |
-| Abgabephase | 07.12. – 18.12.2026 | 2 Wochen | — | — | Abgabe: 18.12.2026 |
+| 1: Fundament und Extraktion | 14.09. – 11.10.2026 | 4 Wochen | 51 | 11 | ZP1: 19.10.2026 |
+| 2: Qualität, Bilder und Shop | 12.10. – 08.11.2026 | 4 Wochen | 55 | 10 | ZP2: 16.11.2026 |
+| 3: PIMFLOW Oberfläche | 09.11. – 06.12.2026 | 4 Wochen | 59 | 12 | ZP3: 14.12.2026 |
+| Abgabephase | 07.12. – 18.12.2026 | 2 Wochen | – | – | Abgabe: 18.12.2026 |
 
 **Alle drei Sprints sind exakt gleich lang.** Das ist die Voraussetzung dafür, die Velocity über den Projektverlauf zu vergleichen: Bei ungleich langen Sprints sagt eine höhere Punktzahl nur, dass mehr Zeit zur Verfügung stand. Auch das ist eine Konsequenz aus der letzten Rückmeldung.
 
-Die Punkteverteilung 51 / 55 / 59 liegt innerhalb von ±7 % um den Mittelwert. Eine weitere Angleichung würde die fachliche Reihenfolge zerreissen — die Messung der Extraktionsgüte setzt die Extraktion voraus, die Anzeige der Fundstelle deren Berechnung.
+Die Punkteverteilung 51 / 55 / 59 liegt innerhalb von ±7 % um den Mittelwert. Eine weitere Angleichung würde die fachliche Reihenfolge zerreissen: Die Messung der Extraktionsgüte setzt die Extraktion voraus, die Anzeige der Fundstelle deren Berechnung.
 
 Die Zwischenpräsentationen liegen jeweils acht Tage nach Sprint-Ende. Der Abstand ist eingeplant: Der Sprint ist zum Zeitpunkt der Präsentation abgeschlossen, die Zahlen stehen fest, und der Burndown lässt sich auswerten statt hochrechnen.
 
@@ -265,7 +265,7 @@ Die Zwischenpräsentationen liegen jeweils acht Tage nach Sprint-Ende. Der Absta
 
 Die unterschriebene Projektbeschreibung sieht die Oberfläche in Sprint 2 und die Shopify-Integration in Sprint 3 vor. Das Board dreht das um: **Sprint 1 und 2 bauen ausschliesslich Backend, KI und Shopify.** Die Oberfläche folgt in Sprint 3.
 
-**Begründung:** Der fachliche Kern dieser Arbeit ist die Extraktion. Das ist auch der Teil mit dem echten Risiko — ob ein Modell einen Lieferantenkatalog zuverlässig liest, weiss man erst, wenn man es gemessen hat. Steht dieser Teil früh und ist belegt, bleibt für die Oberfläche ein voller Sprint mit bekannter Datenlage. Umgekehrt hätte ich eine Oberfläche über einer Extraktion gebaut, von der ich nicht weiss, ob sie trägt.
+**Begründung:** Der fachliche Kern dieser Arbeit ist die Extraktion. Das ist auch der Teil mit dem echten Risiko. Ob ein Modell einen Lieferantenkatalog zuverlässig liest, weiss man erst, wenn man es gemessen hat. Steht dieser Teil früh und ist belegt, bleibt für die Oberfläche ein voller Sprint mit bekannter Datenlage. Umgekehrt hätte ich eine Oberfläche über einer Extraktion gebaut, von der ich nicht weiss, ob sie trägt.
 
 Praktisch heisst das: Zur ZP1 und ZP2 wird über `curl` gegen die API und über den Shopify-Shop vorgeführt, nicht über eine eigene Weboberfläche. Jede Anforderung dieser beiden Sprints gilt als erfüllt, wenn sie über die HTTP-API nachweisbar ist.
 
@@ -285,7 +285,7 @@ Die Abweichung ist mit dem Firmenexperten abgestimmt und wird in jedem Sprint Re
 | R4 | Kein eindeutiges Produktbild auffindbar | hoch | hoch | Nur eindeutig zuordenbare Bilder von offiziellen Herstellerseiten; sonst kein Vorschlag, manueller Upload möglich |
 | R5 | Zeitkonflikt mit dem Kundenprojekt | niedrig | mittel | Regelmässige Abstimmung, Fortschrittskontrolle an Sprintzielen |
 
-**Eingetreten in Sprint 1:** R3, in einer Form, die ich nicht auf dem Zettel hatte — pdfium verweigert eine zweite Bindung im selben Prozess. Details unter [Durchführung](#da-7--fundstelle-im-dokument-belegen).
+**Eingetreten in Sprint 1:** R3, in einer Form, die ich nicht auf dem Zettel hatte: pdfium verweigert eine zweite Bindung im selben Prozess. Details unter [Durchführung](#da-7--fundstelle-im-dokument-belegen).
 
 **R1 hat sich bisher nicht bestätigt.** Die Messung ergab 100 % am Testdatensatz. Das entwertet das Risiko nicht: Ein Dokument ist ein Dokument, und die Bewertung bleibt bis zur breiteren Messung in Sprint 2 unverändert.
 
@@ -380,7 +380,7 @@ Merkblatt A bewertet in sieben Bereichen. Diese Zuordnung zeigt, worin sie in di
 ---
 ---
 
-# Sprint 1 — Fundament und Extraktion
+# Sprint 1: Fundament und Extraktion
 
 **14.09. – 11.10.2026 · 4 Wochen · 11 Tickets · 51 Story Points**
 
@@ -449,15 +449,15 @@ Alle Akzeptanzkriterien zu allen elf Tickets stehen im [Product Backlog](product
 
 **Unspektakulär und unverzichtbar.**
 
-Rust-Projekt mit axum, PostgreSQL in Docker, und eine Konfiguration, die beim Start einmal aus der Umgebung gelesen und geprüft wird. Fehlt `ANTHROPIC_API_KEY`, bricht der Prozess sofort ab und nennt die Variable — statt eine Stunde später beim ersten Extraktionsversuch.
+Rust-Projekt mit axum, PostgreSQL in Docker, und eine Konfiguration, die beim Start einmal aus der Umgebung gelesen und geprüft wird. Fehlt `ANTHROPIC_API_KEY`, bricht der Prozess sofort ab und nennt die Variable, statt eine Stunde später beim ersten Extraktionsversuch.
 
 Zwei Entscheidungen, die sich später ausgezahlt haben:
 
-**Fachwerte sind eigene Typen.** `Grams`, `Millimetres`, `Money` in ganzen Rappen, `ProductId`, `ProposalId`. Der Aufwand dafür ist einmalig, der Nutzen dauerhaft: Ein Preis kann nicht versehentlich als Fliesskommazahl gerundet werden, und zwei IDs lassen sich nicht vertauschen. `Money` rechnet ausschliesslich in ganzen Rappen — Fliesskomma hat in Geldbeträgen nichts verloren.
+**Fachwerte sind eigene Typen.** `Grams`, `Millimetres`, `Money` in ganzen Rappen, `ProductId`, `ProposalId`. Der Aufwand dafür ist einmalig, der Nutzen dauerhaft: Ein Preis kann nicht versehentlich als Fliesskommazahl gerundet werden, und zwei IDs lassen sich nicht vertauschen. `Money` rechnet ausschliesslich in ganzen Rappen, denn Fliesskomma hat in Geldbeträgen nichts verloren.
 
 **Ports in der Domäne, Implementierung aussen.** `domain/ports.rs` definiert, was der Anwendungsfall braucht; `infrastructure/db/` liefert es. Beim Testen tritt ein Test-Double an dieselbe Stelle.
 
-Die Ports haben mich zwei Anläufe gekostet. Der erste Schnitt war zu fein — je Tabelle ein Trait mit fünfzehn Methoden, von denen die Anwendungsfälle drei brauchten. Der zweite Schnitt fragt: Was braucht dieser Anwendungsfall? Und genau das steht im Trait.
+Die Ports haben mich zwei Anläufe gekostet. Der erste Schnitt war zu fein: je Tabelle ein Trait mit fünfzehn Methoden, von denen die Anwendungsfälle drei brauchten. Der zweite Schnitt fragt: Was braucht dieser Anwendungsfall? Und genau das steht im Trait.
 
 **Betroffen:** `src/config.rs`, `src/domain/ids.rs`, `money.rs`, `measurement.rs`, `src/domain/ports.rs`, `src/infrastructure/db/`, `migrations/pimflow/`
 
@@ -495,7 +495,7 @@ Dieses Zitat ist der Schlüssel zu DA-7. Ohne es wäre die Fundstelle nicht best
 
 Ausgelesen werden elf Felder: Produktname, Beschreibung, EAN, Hersteller-Nummer, Lieferanten-Nummer, Marke, Gewicht, Länge, Breite, Höhe, Preis. Was in keine dieser Kategorien fällt, wird als freies Attribut übernommen statt verworfen.
 
-Jeder ausgehende Aufruf hat ein Zeitlimit. Bei 429 und 5xx wird mit wachsendem Abstand wiederholt. Verbrauchte Token, Anzahl Aufrufe und Dauer werden je Extraktion gespeichert — das ist die Grundlage für die Wirtschaftlichkeitsbetrachtung in Sprint 2.
+Jeder ausgehende Aufruf hat ein Zeitlimit. Bei 429 und 5xx wird mit wachsendem Abstand wiederholt. Verbrauchte Token, Anzahl Aufrufe und Dauer werden je Extraktion gespeichert. Das ist die Grundlage für die Wirtschaftlichkeitsbetrachtung in Sprint 2.
 
 **Betroffen:** `src/infrastructure/claude/`, `src/application/extract_document.rs`
 
@@ -507,17 +507,17 @@ Jeder ausgehende Aufruf hat ein Zeitlimit. Bei 429 und 5xx wird mit wachsendem A
 
 Das Modell sagt: „Ich habe 141 g gelesen, und zwar aus dem Text `141 g`." Was es **nicht** sagt, ist, wo das steht. Diese Frage beantwortet pdfium: Es sucht den Wortlaut im Dokument und vermisst das umschliessende Rechteck.
 
-Der Unterschied ist grundlegend. Würde ich das Modell nach Koordinaten fragen, bekäme ich plausible Zahlen, die ich nicht prüfen kann. So stammt der Wert vom Modell und die Geometrie aus dem Dokument — zwei unabhängige Quellen, und die zweite überprüft die erste.
+Der Unterschied ist grundlegend. Würde ich das Modell nach Koordinaten fragen, bekäme ich plausible Zahlen, die ich nicht prüfen kann. So stammt der Wert vom Modell und die Geometrie aus dem Dokument: zwei unabhängige Quellen, und die zweite überprüft die erste.
 
 **Ein Zitat, das sich nicht finden lässt, wird zum Befund.** Das ist der eigentliche Gewinn: Ein Wert, auf den das Modell nicht zeigen kann, stand möglicherweise nie auf der Seite. Statt ihn stillschweigend zu übernehmen, wird er markiert.
 
-Die Koordinaten sind seitenrelativ in Prozent gespeichert, dazu das Seitenverhältnis. So bleibt die Fläche unabhängig davon, in welcher Grösse ein Dokument später dargestellt wird — die grafische Hervorhebung ist DA-23 in Sprint 3.
+Die Koordinaten sind seitenrelativ in Prozent gespeichert, dazu das Seitenverhältnis. So bleibt die Fläche unabhängig davon, in welcher Grösse ein Dokument später dargestellt wird. Die grafische Hervorhebung ist DA-23 in Sprint 3.
 
 **Was mich Zeit gekostet hat:**
 
 Die Textsuche darf nicht exakt sein. Ein PDF bricht Zeilen um und setzt Leerzeichen, wo im Layout welche gebraucht werden, nicht wo im Text welche stehen. Ein Zitat wie `12,5 x 8,4 x 5,1 cm` kann im Dokument über einen Zeilenumbruch verteilt sein. Die Suche normalisiert deshalb Leerraum, bevor sie vergleicht.
 
-Und die pdfium-Sache: Die Bibliothek initialisiert prozessweiten Zustand und verweigert eine zweite Bindung. Im ersten Anlauf band jeder Aufruf neu, was im Einzeltest funktionierte und beim parallelen Testlauf abstürzte. Die Fehlermeldung deutete auf ein Speicherproblem, was in die Irre führte. Die Lösung ist ein Singleton hinter einem Mutex — und die Erkenntnis, dass eine C-Bibliothek eigene Regeln mitbringt, egal wie sicher die Sprache darüber ist.
+Und die pdfium-Sache: Die Bibliothek initialisiert prozessweiten Zustand und verweigert eine zweite Bindung. Im ersten Anlauf band jeder Aufruf neu, was im Einzeltest funktionierte und beim parallelen Testlauf abstürzte. Die Fehlermeldung deutete auf ein Speicherproblem, was in die Irre führte. Die Lösung ist ein Singleton hinter einem Mutex, und die Erkenntnis daraus lautet, dass eine C-Bibliothek eigene Regeln mitbringt, egal wie sicher die Sprache darüber ist.
 
 **Betroffen:** `src/application/pipeline/anchor.rs`, `src/infrastructure/pdf/anchor.rs`
 
@@ -531,11 +531,11 @@ Eine kombinierte Massangabe wie `12,5 x 8,4 x 5,1 cm` steht im Katalog in einer 
 
 Der Grundsatz dahinter:
 
-> **Ein Regelergebnis schlägt die Selbsteinschätzung des Modells — in beide Richtungen.**
+> **Ein Regelergebnis schlägt die Selbsteinschätzung des Modells, in beide Richtungen.**
 
 Sagt das Modell „hohe Konfidenz" und die EAN-Prüfziffer stimmt nicht, gilt die Prüfziffer. Sagt das Modell „unsicher" und alle Regeln greifen sauber, steigt die Konfidenz. Damit hat die Konfidenz eine überprüfbare Grundlage statt einer behaupteten.
 
-Befunde tragen einen Schweregrad: `Rejected` für unbrauchbar, `Suspect` für fragwürdig. Ein unlesbarer Wert wird gemeldet und **bleibt erhalten**, statt verworfen zu werden — der Prüfer soll sehen, was dastand.
+Befunde tragen einen Schweregrad: `Rejected` für unbrauchbar, `Suspect` für fragwürdig. Ein unlesbarer Wert wird gemeldet und **bleibt erhalten**, statt verworfen zu werden, denn der Prüfer soll sehen, was dastand.
 
 **Betroffen:** `src/application/pipeline/normalise.rs`, `validate.rs`, `split_dimensions.rs`
 
@@ -598,8 +598,8 @@ Ausgeführt am 15.09.2026, Rust 1.97.1, macOS 15.6:
 
 | Prüfung | Ergebnis | Dauer |
 |---|---|---|
-| `cargo fmt --check` | sauber | — |
-| `cargo clippy -- -D warnings` | sauber, keine Warnung | — |
+| `cargo fmt --check` | sauber | – |
+| `cargo clippy -- -D warnings` | sauber, keine Warnung | – |
 | Unit-Tests | **324 bestanden**, 0 fehlgeschlagen | 0,10 s |
 | Integrationstests | **19 bestanden**, 0 fehlgeschlagen | 0,94 s |
 | **Total** | **343 Tests, alle grün** | 1,04 s |
@@ -632,11 +632,11 @@ Verteilt über 39 Dateien. Die Schwerpunkte liegen dort, wo Fehler wehtun:
 
 ### Die Messung
 
-Der mit dem Kunden vereinbarte Testdatensatz ([demo/test.pdf](demo/test.pdf), SHA-256 `7930a9cf…5efd9`) enthält sechs Produkte mit je elf Feldern. **Die Sollwerte wurden von Hand aus dem Dokument abgelesen, nicht maschinell erzeugt** — ein Massstab, den das Modell selbst erstellt hat, würde das Modell an sich selbst messen.
+Der mit dem Kunden vereinbarte Testdatensatz ([demo/test.pdf](demo/test.pdf), SHA-256 `7930a9cf…5efd9`) enthält sechs Produkte mit je elf Feldern. **Die Sollwerte wurden von Hand aus dem Dokument abgelesen, nicht maschinell erzeugt**. Ein Massstab, den das Modell selbst erstellt hat, würde das Modell an sich selbst messen.
 
 Zwei der 66 Felder sind bewusst leer: Sie stehen im Dokument nicht und müssen als fehlend erkannt werden, nicht erfunden.
 
-Die Fixture wird über die Prüfsumme der Datei erkannt, nicht über den Dateinamen. Ein Name lässt sich jedem Upload geben, eine Prüfsumme nicht — so kann keine Messung gegen ein Dokument entstehen, für das niemand Sollwerte hinterlegt hat.
+Die Fixture wird über die Prüfsumme der Datei erkannt, nicht über den Dateinamen. Ein Name lässt sich jedem Upload geben, eine Prüfsumme nicht. So kann keine Messung gegen ein Dokument entstehen, für das niemand Sollwerte hinterlegt hat.
 
 ![Messung am Testdatensatz](docs/images/messung.svg)
 
@@ -668,7 +668,7 @@ Je Produkt:
 | Samsung T9 SSD 2TB | 11 / 11 | 10 / 11 |
 | TP-Link Deco X50 | 11 / 11 | 11 / 11 |
 
-**Die beiden Werte ohne Fundstelle sind genau die zwei Felder, die im Dokument nicht vorkommen** — `supplier_sku` bei der Brio 4K und `weight_grams` bei der Samsung T9. Beide wurden korrekt als fehlend gemeldet. Ein Feld, das nicht dasteht, hat nichts zu verankern.
+**Die beiden Werte ohne Fundstelle sind genau die zwei Felder, die im Dokument nicht vorkommen**: `supplier_sku` bei der Brio 4K und `weight_grams` bei der Samsung T9. Beide wurden korrekt als fehlend gemeldet. Ein Feld, das nicht dasteht, hat nichts zu verankern.
 
 Das ist mir das liebste Einzelergebnis der Messung. Nicht die 100 %, sondern diese zwei Lücken: Genau dort, wo ein Sprachmodell erfahrungsgemäss etwas Plausibles erfindet, hat es nichts geliefert.
 
@@ -680,7 +680,7 @@ Ein ehrlicher Vorbehalt, und ich möchte ihn lieber selbst formulieren als im Ko
 
 Was die Zahl belegt, ist enger und trotzdem aussagekräftig: Die Pipeline liest einen realistischen Lieferantenkatalog ohne Fehler und ohne zu erfinden, und sie kann für 96,97 % der Werte zeigen, wo sie stehen.
 
-**Bemerkenswert am Rande:** Die Extraktion lief mit `claude-haiku-4-5`, dem kleinsten Modell der Familie. Das war ursprünglich nicht so geplant — das Design sah Opus vor. Dass das kleinste Modell 100 % erreicht, spricht dafür, dass die Arbeit in der Pipeline steckt und nicht in roher Modellstärke. Für die Wirtschaftlichkeitsbetrachtung in Sprint 2 ist das der interessanteste Befund aus diesem Sprint.
+**Bemerkenswert am Rande:** Die Extraktion lief mit `claude-haiku-4-5`, dem kleinsten Modell der Familie. Das war ursprünglich nicht so geplant, denn das Design sah Opus vor. Dass das kleinste Modell 100 % erreicht, spricht dafür, dass die Arbeit in der Pipeline steckt und nicht in roher Modellstärke. Für die Wirtschaftlichkeitsbetrachtung in Sprint 2 ist das der interessanteste Befund aus diesem Sprint.
 
 ### Sprint-Ziele gegen Ergebnis
 
@@ -700,7 +700,7 @@ Was die Zahl belegt, ist enger und trotzdem aussagekräftig: Die Pipeline liest 
 
 **Termin:** 19.10.2026, 11:30 – 12:00 Uhr
 **Teilnehmende:** Corrado Parisi (Schulexperte), Andrej Birka (Firmenexperte)
-**Form:** Sprint Review — Sprint Backlog, Fortschritt und umgesetzte Funktionen gemeinsam durchgehen
+**Form:** Sprint Review, bei dem Sprint Backlog, Fortschritt und umgesetzte Funktionen gemeinsam durchgegangen werden
 
 **Geplanter Ablauf**
 
@@ -736,9 +736,9 @@ Die Vorführung kommt bewusst früh. Das ist die Konsequenz aus der Rückmeldung
 
 | Ticket | Geschätzt | Gefühlter Aufwand | Abweichung |
 |---|---|---|---|
-| DA-7 Fundstelle belegen | 8 | ~10 | zu niedrig — pdfium war unbekanntes Gebiet |
-| DA-2 Schichtenarchitektur | 3 | ~5 | zu niedrig — Ports zweimal geschnitten |
-| DA-6 Extraktion | 8 | ~7 | leicht zu hoch — das Schema hat viel abgenommen |
+| DA-7 Fundstelle belegen | 8 | ~10 | zu niedrig, pdfium war unbekanntes Gebiet |
+| DA-2 Schichtenarchitektur | 3 | ~5 | zu niedrig, Ports zweimal geschnitten |
+| DA-6 Extraktion | 8 | ~7 | leicht zu hoch, das Schema hat viel abgenommen |
 | übrige acht Tickets | 32 | ~32 | zutreffend |
 
 **Muster:** Ich unterschätze konsequent Aufgaben mit einer Technologie, die ich noch nicht kenne, und schätze Vertrautes zuverlässig. Bei pdfium war nicht die Aufgabe schwer, sondern das Verhalten der Bibliothek unbekannt.
@@ -761,10 +761,10 @@ Die Vorführung kommt bewusst früh. Das ist die Konsequenz aus der Rückmeldung
 
 Ein Lieferantendokument geht hinein, strukturierte Produktvorschläge kommen heraus, und zu fast jedem Wert lässt sich zeigen, wo er im Dokument steht. Am vereinbarten Testdatensatz wurden 66 von 66 Attributwerten korrekt erkannt, ohne einen erfundenen Wert.
 
-Was mir an diesem Sprint am meisten gefällt, ist nicht die Zahl. Es sind die zwei Felder, die das Modell **nicht** geliefert hat. Genau dort, wo ein Sprachmodell normalerweise etwas Plausibles hinschreibt, kam nichts — weil im Dokument nichts stand.
+Was mir an diesem Sprint am meisten gefällt, ist nicht die Zahl. Es sind die zwei Felder, die das Modell **nicht** geliefert hat. Genau dort, wo ein Sprachmodell normalerweise etwas Plausibles hinschreibt, kam nichts, weil im Dokument nichts stand.
 
 Sichtbar ist davon bisher nichts. Es gibt keine Oberfläche, nur API-Antworten in JSON. Aber der Teil mit dem echten Risiko ist erledigt und gemessen, und das war der Zweck dieses Sprints.
 
-**Als Nächstes:** Sprint 2 — die Extraktion wird gehärtet, das Produktbild kommt dazu, und ein freigegebenes Produkt findet seinen Weg in den Shopify-Shop.
+**Als Nächstes:** In Sprint 2 wird die Extraktion gehärtet, das Produktbild kommt dazu, und ein freigegebenes Produkt findet seinen Weg in den Shopify-Shop.
 
 ---
