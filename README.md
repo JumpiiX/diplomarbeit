@@ -45,6 +45,7 @@
 - [SWOT-Analyse](#swot-analyse)
 - [Definition of Done](#definition-of-done)
 - [Arbeitsweise mit Linear](#arbeitsweise-mit-linear)
+- [Zur Ticket-Nummerierung auf den Screenshots](#zur-ticket-nummerierung-auf-den-screenshots)
 - [Kommunikation mit den Experten](#kommunikation-mit-den-experten)
 - [Abdeckung des Bewertungsrasters](#abdeckung-des-bewertungsrasters)
 
@@ -329,7 +330,29 @@ Zwei Einstellungen, die bewusst so gesetzt sind:
 
 Der Sprint-Umfang bleibt während des laufenden Sprints stabil. Kommt etwas dazu, geht es in den nächsten Sprint.
 
-> **Einzufügen:** Screenshot des Linear-Boards am Sprint-1-Start (14.09.2026) und am Sprint-1-Ende (11.10.2026). Corrado hat das in der Rückmeldung zur SA5 ausdrücklich gewünscht, damit Commitment und tatsächlicher Fortschritt nebeneinander sichtbar werden.
+**Board-Screenshots zu Beginn und Ende jedes Sprints.** Das ist eine Konsequenz aus der Rückmeldung zur letzten Arbeit: Nebeneinander gestellt zeigen sie das Commitment und den tatsächlichen Fortschritt, statt nur das Ergebnis. Sie stehen jeweils bei der [Sprint-Planung](#sprint-1-planung) und beim [Sprint-Review](#sprint-1-review).
+
+### Zur Ticket-Nummerierung auf den Screenshots
+
+Auf den Board-Screenshots tragen die Tickets die Bezeichnungen `TBZ-2` bis `TBZ-12`, während diese Dokumentation und der Product Backlog von `DA-1` bis `DA-33` sprechen. Die Titel sind identisch, die Zuordnung ist eindeutig:
+
+| Board | Dokumentation | Titel |
+|---|---|---|
+| TBZ-2 | DA-1 | Projektfundament aufsetzen |
+| TBZ-3 | DA-2 | Schichtenarchitektur festlegen |
+| TBZ-4 | DA-3 | Produktdaten als Typen modellieren |
+| TBZ-5 | DA-4 | Produktdaten dauerhaft speichern |
+| TBZ-6 | DA-5 | Lieferantendokument hochladen |
+| TBZ-7 | DA-6 | Produktdaten mit einem Sprachmodell auslesen |
+| TBZ-8 | DA-7 | Fundstelle im Dokument belegen |
+| TBZ-9 | DA-8 | Werte vereinheitlichen und prüfen |
+| TBZ-10 | DA-9 | Jede Handlung nachvollziehbar protokollieren |
+| TBZ-11 | DA-10 | Fehler an der HTTP-Grenze abbilden |
+| TBZ-12 | DA-33 | Projektjournal führen |
+
+> **Zu klären:** Herkunft des abweichenden Präfixes und des Versatzes um eine Nummer belegen (Team-Kürzel in Linear gegenüber der Benennung im Backlog). Solange das offen ist, bleibt diese Tabelle die verbindliche Zuordnung.
+
+Die Angabe „22 issues hidden by filters" auf beiden Screenshots bezieht sich auf die Tickets der Sprints 2 und 3, die über den Milestone-Filter ausgeblendet sind. Sichtbar ist ausschliesslich Sprint 1.
 
 ---
 
@@ -419,6 +442,14 @@ Die dritte Frage ist der Kern. Ohne sie wäre PIMFLOW ein Werkzeug, das plausibl
 | DA-33 | Projektjournal führen | Must | 3 | Erledigt |
 
 **Total: 51 Story Points**
+
+### Das Commitment am Sprint-Start
+
+![Linear-Board am Sprint-1-Start](docs/images/board-sprint1-start.png)
+
+*Linear, Projekt „PIMFLOW Diplomarbeit", zu Beginn von Sprint 1. Alle elf Tickets stehen auf `Todo`, zusammen 51 Story Points. Der Milestone „Sprint 1 · Fundament und Extraktion" läuft bis zum 11. Oktober. Die Sprints 2 und 3 sind mit 55 und 59 Punkten bereits angelegt, aber über den Milestone-Filter ausgeblendet.*
+
+Das ist der Stand, auf den ich mich festgelegt habe, bevor die erste Zeile Code entstanden ist. Das Gegenstück steht beim [Sprint-Review](#das-ergebnis-am-sprint-ende).
 
 Beispielhaft die Story-Form, in der alle Tickets im Backlog stehen:
 
@@ -694,6 +725,16 @@ Was die Zahl belegt, ist enger und trotzdem aussagekräftig: Die Pipeline liest 
 
 **Alle 51 Story Points abgeschlossen. Alle elf Tickets erfüllen die Definition of Done.**
 
+### Das Ergebnis am Sprint-Ende
+
+![Linear-Board am Sprint-1-Ende](docs/images/board-sprint1-ende.png)
+
+*Dasselbe Board am Ende von Sprint 1. Alle elf Tickets stehen auf `Done`, die vollen 51 Story Points sind abgeschlossen. Im Aktivitätsprotokoll rechts: „Milestone Sprint 1 · Fundament und Extraktion completed · Oct 8".*
+
+Gegenüber dem [Commitment vom Sprint-Start](#das-commitment-am-sprint-start) hat sich am Umfang nichts verändert: dieselben elf Tickets, dieselben 51 Punkte, keine Verschiebung in einen späteren Sprint und keine nachträgliche Aufnahme. Das ist die Aussage, die sich erst aus den beiden Screenshots nebeneinander ergibt.
+
+Der Milestone wurde am **8. Oktober** abgeschlossen, drei Tage vor dem geplanten Sprint-Ende am 11. Oktober. Die Zeitreserve stammt überwiegend aus DA-6, das sich durch das erzwungene Antwortschema als leichter erwies als geschätzt; sie wurde durch den Mehraufwand bei DA-7 (pdfium) teilweise wieder aufgebraucht. Die Gegenüberstellung von Schätzung und Wirklichkeit steht in der [Retrospektive](#schätzung-gegen-wirklichkeit).
+
 ---
 
 ## Zwischenpräsentation 1
@@ -704,14 +745,28 @@ Was die Zahl belegt, ist enger und trotzdem aussagekräftig: Die Pipeline liest 
 
 **Geplanter Ablauf**
 
-1. Sprint Backlog und Burndown aus Linear
-2. Live-Vorführung über `curl`: Upload, Extraktion, Vorschläge mit Konfidenz und Koordinaten als JSON
-3. Die Messung: 66 von 66 Werten, mit dem Testsetup dahinter
-4. Die Fundstellen-Mechanik an einem Beispiel
-5. Abweichung von der Sprint-Reihenfolge ansprechen und begründen
-6. Ausblick auf Sprint 2
+| # | Schritt | Befehl |
+|---|---|---|
+| 1 | Sprint Backlog und Burndown aus Linear | – |
+| 2 | Dokument hochladen | `./demo.sh upload ../test.pdf` |
+| 3 | Auslesen lassen | `./demo.sh extract` |
+| 4 | Vorschläge mit Fundstellen zeigen | `./demo.sh show` |
+| 5 | Gegen die Sollwerte messen | `./demo.sh accuracy` |
+| 6 | Abweichung von der Sprint-Reihenfolge begründen | – |
+| 7 | Ausblick auf Sprint 2 | – |
 
 Die Vorführung kommt bewusst früh. Das ist die Konsequenz aus der Rückmeldung zur letzten Präsentation: *„Ich würde die Demo früher zeigen. Das funktionierende Erlebnis ist dein stärkster Beleg."*
+
+Die Schritte 2 bis 5 laufen über [`demo/sprint-1/demo.sh`](demo/sprint-1/demo.sh). Das Skript fügt der Anwendung nichts hinzu: Es ruft dieselben HTTP-Endpunkte auf, die ab Sprint 3 auch die Oberfläche benutzt, und druckt vor jedem Schritt den `curl`-Aufruf, den es absetzt. Die Aufbereitung der Antwort liegt bewusst in einer eigenen Datei ([`formatiere.py`](demo/sprint-1/formatiere.py)), damit beim Vorführen sichtbar bleibt, welcher Teil die API aufruft und welcher nur formatiert.
+
+**Vorbereitung vor dem Termin**
+
+```bash
+cd pimflow-backend && docker compose up -d && cargo run   # Server auf :8080
+cd diplomarbeit/demo/sprint-1 && ./demo.sh reset          # sauberer Ausgangszustand
+```
+
+Der Schritt `extract` ruft das Sprachmodell und dauert rund 40 Sekunden. Er braucht eine Internetverbindung und einen gültigen `ANTHROPIC_API_KEY`. Fällt beides aus, bleibt die Messung aus Schritt 5 trotzdem vorführbar, solange das Dokument aus einem früheren Durchlauf noch vorhanden ist.
 
 > **Nach dem 19.10.2026 einzufügen:** Rückmeldung beider Experten, daraus abgeleitete Massnahmen und deren Umsetzung in Sprint 2.
 
