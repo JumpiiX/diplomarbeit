@@ -21,7 +21,7 @@
 
 - **Testdatensatz:** [demo/test.pdf](demo/test.pdf), das mit dem Kunden vereinbarte Test-PDF
 - **Product Backlog:** [product-backlog.md](product-backlog.md), alle 33 Tickets über drei Sprints
-- **Issue-Tracking:** Linear, Team *Diplomarbeit*, Tickets `DA-1` bis `DA-33`
+- **Issue-Tracking:** Linear, Team *Diplomarbeit*, Tickets `TBZ-2` bis `TBZ-34`
 - **Quellcode:** Backend und Frontend liegen in privaten Repositories des Kundenprojekts. Aus Vertraulichkeitsgründen besteht während der Projektlaufzeit kein Zugriff; der vollständige Quellcode wird den Experten mit der Abgabe als ZIP-Archiv übergeben (siehe [Zugang zum Quellcode](#zugang-zum-quellcode)).
 
 ---
@@ -45,7 +45,6 @@
 - [SWOT-Analyse](#swot-analyse)
 - [Definition of Done](#definition-of-done)
 - [Arbeitsweise mit Linear](#arbeitsweise-mit-linear)
-- [Zur Ticket-Nummerierung auf den Screenshots](#zur-ticket-nummerierung-auf-den-screenshots)
 - [Kommunikation mit den Experten](#kommunikation-mit-den-experten)
 - [Abdeckung des Bewertungsrasters](#abdeckung-des-bewertungsrasters)
 
@@ -332,26 +331,6 @@ Der Sprint-Umfang bleibt während des laufenden Sprints stabil. Kommt etwas dazu
 
 **Board-Screenshots zu Beginn und Ende jedes Sprints.** Das ist eine Konsequenz aus der Rückmeldung zur letzten Arbeit: Nebeneinander gestellt zeigen sie das Commitment und den tatsächlichen Fortschritt, statt nur das Ergebnis. Sie stehen jeweils bei der [Sprint-Planung](#sprint-1-planung) und beim [Sprint-Review](#sprint-1-review).
 
-### Zur Ticket-Nummerierung auf den Screenshots
-
-Auf den Board-Screenshots tragen die Tickets die Bezeichnungen `TBZ-2` bis `TBZ-12`, während diese Dokumentation und der Product Backlog von `DA-1` bis `DA-33` sprechen. Die Titel sind identisch, die Zuordnung ist eindeutig:
-
-| Board | Dokumentation | Titel |
-|---|---|---|
-| TBZ-2 | DA-1 | Projektfundament aufsetzen |
-| TBZ-3 | DA-2 | Schichtenarchitektur festlegen |
-| TBZ-4 | DA-3 | Produktdaten als Typen modellieren |
-| TBZ-5 | DA-4 | Produktdaten dauerhaft speichern |
-| TBZ-6 | DA-5 | Lieferantendokument hochladen |
-| TBZ-7 | DA-6 | Produktdaten mit einem Sprachmodell auslesen |
-| TBZ-8 | DA-7 | Fundstelle im Dokument belegen |
-| TBZ-9 | DA-8 | Werte vereinheitlichen und prüfen |
-| TBZ-10 | DA-9 | Jede Handlung nachvollziehbar protokollieren |
-| TBZ-11 | DA-10 | Fehler an der HTTP-Grenze abbilden |
-| TBZ-12 | DA-33 | Projektjournal führen |
-
-> **Zu klären:** Herkunft des abweichenden Präfixes und des Versatzes um eine Nummer belegen (Team-Kürzel in Linear gegenüber der Benennung im Backlog). Solange das offen ist, bleibt diese Tabelle die verbindliche Zuordnung.
-
 Die Angabe „22 issues hidden by filters" auf beiden Screenshots bezieht sich auf die Tickets der Sprints 2 und 3, die über den Milestone-Filter ausgeblendet sind. Sichtbar ist ausschliesslich Sprint 1.
 
 ---
@@ -364,7 +343,7 @@ Die Angabe „22 issues hidden by filters" auf beiden Screenshots bezieht sich a
 | Zwischenpräsentationen | Sprint Review mit beiden Experten | 3× je Sprint |
 | Abstimmung vor Ort | fachliche Fragen mit dem Firmenexperten | nach Bedarf |
 
-**Zum Verzicht auf wöchentliche Statusberichte:** Merkblatt A führt sie als eigenes Bewertungskriterium. Die unterschriebene Projektbeschreibung sieht vor, darauf zu verzichten. An ihre Stelle treten das fortlaufende Projektjournal (DA-33) und die drei Zwischenpräsentationen.
+**Zum Verzicht auf wöchentliche Statusberichte:** Merkblatt A führt sie als eigenes Bewertungskriterium. Die unterschriebene Projektbeschreibung sieht vor, darauf zu verzichten. An ihre Stelle treten das fortlaufende Projektjournal (TBZ-12) und die drei Zwischenpräsentationen.
 
 Das ist kein Weglassen, sondern ein Ersatz mit einer anderen Eigenschaft: Ein Journaleintrag entsteht, wenn etwas entschieden oder verworfen wurde, nicht nach Kalender. Ein Wochenbericht in einer Woche ohne Entscheidung beschreibt nichts; ein Journal überspringt sie einfach. Was nachträglich rekonstruiert wird, ist ohnehin keine Beobachtung mehr, sondern eine Erinnerung.
 
@@ -375,7 +354,7 @@ Backend und Frontend liegen in privaten Repositories des Kundenprojekts. Aufgrun
 Nachvollziehbarkeit ist stattdessen so hergestellt:
 
 - **Diese Dokumentation** nennt zu jeder Aussage die betroffenen Dateien mit Pfad
-- **Linear** ist für beide Experten einsehbar, Tickets `DA-1` bis `DA-33`
+- **Linear** ist für beide Experten einsehbar, Tickets `TBZ-2` bis `TBZ-34`
 - **Die Zwischenpräsentationen** führen den jeweiligen Stand live vor
 - **Mit der Abgabe** wird der vollständige Quellcode als ZIP-Archiv übergeben
 
@@ -389,16 +368,16 @@ Merkblatt A bewertet in sieben Bereichen. Diese Zuordnung zeigt, worin sie in di
 
 | Bereich | Kriterium | Abgedeckt durch |
 |---|---|---|
-| 1 Wissen | Fachwissen, Hintergründe, neu erarbeitetes Wissen | DA-6, DA-7 (Modellanbindung, pdfium), Technologieentscheide |
-| 2 Praktische Arbeiten | Infrastruktur, technische Umsetzung | DA-1, DA-4 |
-| 2 Praktische Arbeiten | Schulung und Schulungsunterlagen | DA-31 (Sprint 3) |
-| 3 Intellektuelle Fähigkeiten | Problemdiagnose, Zusammenhänge, Urteilsvermögen | DA-8, DA-19, DA-32 |
+| 1 Wissen | Fachwissen, Hintergründe, neu erarbeitetes Wissen | TBZ-7, TBZ-8 (Modellanbindung, pdfium), Technologieentscheide |
+| 2 Praktische Arbeiten | Infrastruktur, technische Umsetzung | TBZ-2, TBZ-5 |
+| 2 Praktische Arbeiten | Schulung und Schulungsunterlagen | TBZ-32 (Sprint 3) |
+| 3 Intellektuelle Fähigkeiten | Problemdiagnose, Zusammenhänge, Urteilsvermögen | TBZ-9, TBZ-20, TBZ-33 |
 | 4 Organisatorische Fähigkeiten | Projektabwicklung, Steuerung | Linear-Cycles, Burndown je Sprint |
-| 4 Organisatorische Fähigkeiten | Wöchentlicher Statusbericht | ersetzt durch DA-33 und die drei Zwischenpräsentationen |
+| 4 Organisatorische Fähigkeiten | Wöchentlicher Statusbericht | ersetzt durch TBZ-12 und die drei Zwischenpräsentationen |
 | 4 Organisatorische Fähigkeiten | Zwischenpräsentationen | ZP1 bis ZP3 |
-| 5 Soziale Kompetenzen | Zusammenarbeit, Ausdauer | Zusammenarbeit mit dem Firmenexperten, DA-33 |
-| 6 Präsentation & Dokumentation | Dokumentation, Kolloquium, Management Summary | diese Dokumentation, DA-30 |
-| 7 Zielerreichung | Umsetzung der definierten Ziele | DA-19 (Correctness ≥ 99 %), Sprint Goals |
+| 5 Soziale Kompetenzen | Zusammenarbeit, Ausdauer | Zusammenarbeit mit dem Firmenexperten, TBZ-12 |
+| 6 Präsentation & Dokumentation | Dokumentation, Kolloquium, Management Summary | diese Dokumentation, TBZ-31 |
+| 7 Zielerreichung | Umsetzung der definierten Ziele | TBZ-20 (Correctness ≥ 99 %), Sprint Goals |
 
 ---
 ---
@@ -429,17 +408,17 @@ Die dritte Frage ist der Kern. Ohne sie wäre PIMFLOW ein Werkzeug, das plausibl
 
 | Ticket | Story | Priorität | SP | Status |
 |---|---|---|---|---|
-| DA-1 | Projektfundament aufsetzen | Must | 3 | Erledigt |
-| DA-2 | Schichtenarchitektur festlegen | Must | 3 | Erledigt |
-| DA-3 | Produktdaten als Typen modellieren | Must | 5 | Erledigt |
-| DA-4 | Produktdaten dauerhaft speichern | Must | 5 | Erledigt |
-| DA-5 | Lieferantendokument hochladen | Must | 5 | Erledigt |
-| DA-6 | Produktdaten mit einem Sprachmodell auslesen | Must | 8 | Erledigt |
-| DA-7 | Fundstelle im Dokument belegen | Must | 8 | Erledigt |
-| DA-8 | Werte vereinheitlichen und prüfen | Must | 5 | Erledigt |
-| DA-9 | Jede Handlung nachvollziehbar protokollieren | Must | 3 | Erledigt |
-| DA-10 | Fehler an der HTTP-Grenze abbilden | Must | 3 | Erledigt |
-| DA-33 | Projektjournal führen | Must | 3 | Erledigt |
+| TBZ-2 | Projektfundament aufsetzen | Must | 3 | Erledigt |
+| TBZ-3 | Schichtenarchitektur festlegen | Must | 3 | Erledigt |
+| TBZ-4 | Produktdaten als Typen modellieren | Must | 5 | Erledigt |
+| TBZ-5 | Produktdaten dauerhaft speichern | Must | 5 | Erledigt |
+| TBZ-6 | Lieferantendokument hochladen | Must | 5 | Erledigt |
+| TBZ-7 | Produktdaten mit einem Sprachmodell auslesen | Must | 8 | Erledigt |
+| TBZ-8 | Fundstelle im Dokument belegen | Must | 8 | Erledigt |
+| TBZ-9 | Werte vereinheitlichen und prüfen | Must | 5 | Erledigt |
+| TBZ-10 | Jede Handlung nachvollziehbar protokollieren | Must | 3 | Erledigt |
+| TBZ-11 | Fehler an der HTTP-Grenze abbilden | Must | 3 | Erledigt |
+| TBZ-12 | Projektjournal führen | Must | 3 | Erledigt |
 
 **Total: 51 Story Points**
 
@@ -453,7 +432,7 @@ Das ist der Stand, auf den ich mich festgelegt habe, bevor die erste Zeile Code 
 
 Beispielhaft die Story-Form, in der alle Tickets im Backlog stehen:
 
-> **DA-7 · Fundstelle im Dokument belegen**
+> **TBZ-8 · Fundstelle im Dokument belegen**
 >
 > **Als** Software Engineer
 > **möchte ich** zu jedem ausgelesenen Wert die Fundstelle im Dokument als Koordinaten ermitteln
@@ -476,7 +455,7 @@ Alle Akzeptanzkriterien zu allen elf Tickets stehen im [Product Backlog](product
 
 ## Sprint 1 Durchführung
 
-### DA-1 bis DA-4 · Das Fundament
+### TBZ-2 bis TBZ-5 · Das Fundament
 
 **Unspektakulär und unverzichtbar.**
 
@@ -492,7 +471,7 @@ Die Ports haben mich zwei Anläufe gekostet. Der erste Schnitt war zu fein: je T
 
 **Betroffen:** `src/config.rs`, `src/domain/ids.rs`, `money.rs`, `measurement.rs`, `src/domain/ports.rs`, `src/infrastructure/db/`, `migrations/pimflow/`
 
-### DA-5 · Lieferantendokument hochladen
+### TBZ-6 · Lieferantendokument hochladen
 
 **Ein Upload ist mehr Prüfung als Übertragung.**
 
@@ -516,13 +495,13 @@ Das Limit wird nie ganz abgeschaltet. Ein unbegrenzter Body ist ein sehr einfach
 
 **Betroffen:** `src/application/upload_document.rs`, `src/api/handlers/documents.rs`
 
-### DA-6 · Produktdaten mit einem Sprachmodell auslesen
+### TBZ-7 · Produktdaten mit einem Sprachmodell auslesen
 
 **Die Antwort wird erzwungen, nicht erhofft.**
 
 Das PDF geht als `document`-Block an die Claude API. Die Antwortform ist über ein Schema festgelegt, damit nicht Freitext zurückkommt, den ich anschliessend parsen müsste. Zu jedem Wert meldet das Modell zwei Dinge: seine Konfidenz und **den wörtlichen Textausschnitt, aus dem es den Wert gelesen hat**.
 
-Dieses Zitat ist der Schlüssel zu DA-7. Ohne es wäre die Fundstelle nicht bestimmbar.
+Dieses Zitat ist der Schlüssel zu TBZ-8. Ohne es wäre die Fundstelle nicht bestimmbar.
 
 Ausgelesen werden elf Felder: Produktname, Beschreibung, EAN, Hersteller-Nummer, Lieferanten-Nummer, Marke, Gewicht, Länge, Breite, Höhe, Preis. Was in keine dieser Kategorien fällt, wird als freies Attribut übernommen statt verworfen.
 
@@ -530,7 +509,7 @@ Jeder ausgehende Aufruf hat ein Zeitlimit. Bei 429 und 5xx wird mit wachsendem A
 
 **Betroffen:** `src/infrastructure/claude/`, `src/application/extract_document.rs`
 
-### DA-7 · Fundstelle im Dokument belegen
+### TBZ-8 · Fundstelle im Dokument belegen
 
 **Das ist das Herzstück der Arbeit.**
 
@@ -542,7 +521,7 @@ Der Unterschied ist grundlegend. Würde ich das Modell nach Koordinaten fragen, 
 
 **Ein Zitat, das sich nicht finden lässt, wird zum Befund.** Das ist der eigentliche Gewinn: Ein Wert, auf den das Modell nicht zeigen kann, stand möglicherweise nie auf der Seite. Statt ihn stillschweigend zu übernehmen, wird er markiert.
 
-Die Koordinaten sind seitenrelativ in Prozent gespeichert, dazu das Seitenverhältnis. So bleibt die Fläche unabhängig davon, in welcher Grösse ein Dokument später dargestellt wird. Die grafische Hervorhebung ist DA-23 in Sprint 3.
+Die Koordinaten sind seitenrelativ in Prozent gespeichert, dazu das Seitenverhältnis. So bleibt die Fläche unabhängig davon, in welcher Grösse ein Dokument später dargestellt wird. Die grafische Hervorhebung ist TBZ-24 in Sprint 3.
 
 **Was mich Zeit gekostet hat:**
 
@@ -552,7 +531,7 @@ Und die pdfium-Sache: Die Bibliothek initialisiert prozessweiten Zustand und ver
 
 **Betroffen:** `src/application/pipeline/anchor.rs`, `src/infrastructure/pdf/anchor.rs`
 
-### DA-8 · Werte vereinheitlichen und prüfen
+### TBZ-9 · Werte vereinheitlichen und prüfen
 
 **Zwei Schritte ohne Modell.**
 
@@ -570,7 +549,7 @@ Befunde tragen einen Schweregrad: `Rejected` für unbrauchbar, `Suspect` für fr
 
 **Betroffen:** `src/application/pipeline/normalise.rs`, `validate.rs`, `split_dimensions.rs`
 
-### DA-9 und DA-10 · Protokoll und Fehlerbehandlung
+### TBZ-10 und TBZ-11 · Protokoll und Fehlerbehandlung
 
 Das Protokoll hält nicht nur fest, **wer** gehandelt hat, sondern auch **ob die Person selbst gehandelt hat oder ein Modell in ihrem Auftrag**. Ein vom Modell gelesener Wert ist keine Entscheidung der Person, und ein Protokoll, das beides gleich behandelt, wäre irreführend. Bei maschinellen Handlungen wird zusätzlich das Modell vermerkt.
 
@@ -707,7 +686,7 @@ Das ist mir das liebste Einzelergebnis der Messung. Nicht die 100 %, sondern die
 
 Ein ehrlicher Vorbehalt, und ich möchte ihn lieber selbst formulieren als im Kolloquium dazu gefragt werden:
 
-**100 % an einem Dokument sind nicht 100 % im Betrieb.** Der Testdatensatz ist realistisch aufgebaut, aber es ist ein Dokument. Ein Katalog mit anderem Layout, schlechterem Druck oder einer Sprache, die das Modell seltener gesehen hat, kann zu anderen Ergebnissen führen. Die breitere Messung über mehrere Dokumente ist DA-19 in Sprint 2.
+**100 % an einem Dokument sind nicht 100 % im Betrieb.** Der Testdatensatz ist realistisch aufgebaut, aber es ist ein Dokument. Ein Katalog mit anderem Layout, schlechterem Druck oder einer Sprache, die das Modell seltener gesehen hat, kann zu anderen Ergebnissen führen. Die breitere Messung über mehrere Dokumente ist TBZ-20 in Sprint 2.
 
 Was die Zahl belegt, ist enger und trotzdem aussagekräftig: Die Pipeline liest einen realistischen Lieferantenkatalog ohne Fehler und ohne zu erfinden, und sie kann für 96,97 % der Werte zeigen, wo sie stehen.
 
@@ -733,7 +712,7 @@ Was die Zahl belegt, ist enger und trotzdem aussagekräftig: Die Pipeline liest 
 
 Gegenüber dem [Commitment vom Sprint-Start](#das-commitment-am-sprint-start) hat sich am Umfang nichts verändert: dieselben elf Tickets, dieselben 51 Punkte, keine Verschiebung in einen späteren Sprint und keine nachträgliche Aufnahme. Das ist die Aussage, die sich erst aus den beiden Screenshots nebeneinander ergibt.
 
-Der Milestone wurde am **8. Oktober** abgeschlossen, drei Tage vor dem geplanten Sprint-Ende am 11. Oktober. Die Zeitreserve stammt überwiegend aus DA-6, das sich durch das erzwungene Antwortschema als leichter erwies als geschätzt; sie wurde durch den Mehraufwand bei DA-7 (pdfium) teilweise wieder aufgebraucht. Die Gegenüberstellung von Schätzung und Wirklichkeit steht in der [Retrospektive](#schätzung-gegen-wirklichkeit).
+Der Milestone wurde am **8. Oktober** abgeschlossen, drei Tage vor dem geplanten Sprint-Ende am 11. Oktober. Die Zeitreserve stammt überwiegend aus TBZ-7, das sich durch das erzwungene Antwortschema als leichter erwies als geschätzt; sie wurde durch den Mehraufwand bei TBZ-8 (pdfium) teilweise wieder aufgebraucht. Die Gegenüberstellung von Schätzung und Wirklichkeit steht in der [Retrospektive](#schätzung-gegen-wirklichkeit).
 
 ---
 
@@ -768,11 +747,51 @@ cd diplomarbeit/demo/sprint-1 && ./demo.sh reset          # sauberer Ausgangszus
 
 Der Schritt `extract` ruft das Sprachmodell und dauert rund 40 Sekunden. Er braucht eine Internetverbindung und einen gültigen `ANTHROPIC_API_KEY`. Fällt beides aus, bleibt die Messung aus Schritt 5 trotzdem vorführbar, solange das Dokument aus einem früheren Durchlauf noch vorhanden ist.
 
-> **Nach dem 19.10.2026 einzufügen:** Rückmeldung beider Experten, daraus abgeleitete Massnahmen und deren Umsetzung in Sprint 2.
+### Wie es gelaufen ist
+
+Der Ablauf ist aufgegangen wie geplant. Die Vorführung lief durch, und die beiden Teile, auf die es mir ankam, kamen an: der Fundstellen-Nachweis über `show` und die Messung über `accuracy`.
+
+**Beide Experten waren zufrieden.** Es gab keine Beanstandung an Inhalt, Umfang oder Vorgehen.
+
+Zwei Punkte habe ich selbst angesprochen, bevor jemand danach fragen konnte: die gedrehte Sprint-Reihenfolge und den Vorbehalt, dass 100 % an einem Dokument nicht 100 % im Betrieb sind. Nachgefragt wurde zu beiden nichts mehr. Einen Einwand, den man kommen sieht, formuliert man offenbar besser selbst.
+
+### Rückmeldung
+
+**Fokus auf das Wichtigste.** Der einzige inhaltliche Hinweis, und er kam als Warnung statt als Kritik: Der Umfang ist ambitioniert, und wer sich überschätzt, bekommt am Ende nicht alles durch. Die Konsequenz heisst priorisieren statt verbreitern. Was auf ein Bewertungskriterium einzahlt, wird zuerst fertig. Der Rest ist Ausblick und kein Rückstand.
+
+**„Make it work, make it nice, make it fast."** Corrados Leitlinie. Der ganze Inhalt des Satzes steckt in der Reihenfolge:
+
+| Phase | Was zählt | Wo im Projekt |
+|---|---|---|
+| **work** | es tut, was es soll, und das ist belegt | Sprint 1: Extraktion, Fundstelle, Messung |
+| **nice** | brauchbar für den Menschen, der entscheidet | Sprint 3: Oberfläche, Prüfsitzung |
+| **fast** | schnell genug für den Betrieb | zuletzt, und nur wo gemessen zu langsam |
+
+Das deckt sich mit dem, was in Sprint 1 tatsächlich passiert ist. Erst lief die Pipeline und war gemessen, dann kam alles andere. Dass `claude-haiku-4-5` statt Opus genügt, war ein Messergebnis und keine Vorannahme. Eine Optimierung vor der Messung wäre an der falschen Stelle gelandet.
+
+**Die pdfium-Anbindung soll ordentlich dokumentiert werden.** Wir sind im Gespräch darauf gekommen, dass hier eine C-Bibliothek eingebunden ist, und Corrado meinte, das gehöre sauber beschrieben, nicht nur das Ergebnis.
+
+Da hat er recht. Der Satz „das Modell nennt das Zitat, pdfium misst das Rechteck" stimmt zwar, verschweigt aber die Arbeit dazwischen. Zwischen Zitat und fertigem Rechteck liegen mehrere Rechenschritte, und jeden einzelnen davon habe ich zuerst falsch gemacht. Gemerkt habe ich es immer erst, wenn das Rechteck an der falschen Stelle sass.
+
+### Massnahmen
+
+| # | Massnahme | Wann | Stand |
+|---|---|---|---|
+| 1 | Beim Sprint-2-Planning jedes Ticket gegen ein Bewertungskriterium prüfen | Sprint 2 | umgesetzt |
+| 2 | „make it work, make it nice, make it fast" als Leitlinie aufnehmen | beim Schreiben | umgesetzt |
+| 3 | Eigener Abschnitt zur pdfium-Rechnung, Schritt für Schritt, mit Grafik | beim Schreiben | offen |
+| 4 | Umfang bei ZP2 erneut gegen den verbleibenden Zeitraum spiegeln | 16.11.2026 | offen |
 
 ---
 
 ## Sprint 1 Retrospektive
+
+> „It's like driving a car at night. You only see as far as your headlights, but you make the whole trip that way."
+> Steve Jobs
+
+Das trifft, wie dieser Sprint tatsächlich gelaufen ist. Am Anfang wusste ich nicht, ob ein Modell einen Lieferantenkatalog zuverlässig liest, und ich wusste auch nicht, wie das Ganze am Ende aussehen würde. Also habe ich nicht den ganzen Weg geplant, sondern den nächsten Schritt: erst die Architektur einfach halten, dann ein Dokument hochladen, dann einmal extrahieren, dann die Fundstelle. Jeder Schritt hat gezeigt, wo der nächste liegt.
+
+Es ist dasselbe Argument wie „make it work, make it nice, make it fast", nur von der anderen Seite gesehen: Beide Sätze sagen, dass die Reihenfolge die Arbeit macht.
 
 ### Was gut lief
 
@@ -791,9 +810,9 @@ Der Schritt `extract` ruft das Sprachmodell und dauert rund 40 Sekunden. Er brau
 
 | Ticket | Geschätzt | Gefühlter Aufwand | Abweichung |
 |---|---|---|---|
-| DA-7 Fundstelle belegen | 8 | ~10 | zu niedrig, pdfium war unbekanntes Gebiet |
-| DA-2 Schichtenarchitektur | 3 | ~5 | zu niedrig, Ports zweimal geschnitten |
-| DA-6 Extraktion | 8 | ~7 | leicht zu hoch, das Schema hat viel abgenommen |
+| TBZ-8 Fundstelle belegen | 8 | ~10 | zu niedrig, pdfium war unbekanntes Gebiet |
+| TBZ-3 Schichtenarchitektur | 3 | ~5 | zu niedrig, Ports zweimal geschnitten |
+| TBZ-7 Extraktion | 8 | ~7 | leicht zu hoch, das Schema hat viel abgenommen |
 | übrige acht Tickets | 32 | ~32 | zutreffend |
 
 **Muster:** Ich unterschätze konsequent Aufgaben mit einer Technologie, die ich noch nicht kenne, und schätze Vertrautes zuverlässig. Bei pdfium war nicht die Aufgabe schwer, sondern das Verhalten der Bibliothek unbekannt.
